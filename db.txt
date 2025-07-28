@@ -1,0 +1,15 @@
+-- Create database
+CREATE DATABASE IF NOT EXISTS user_table;
+USE user_table;
+
+-- Create table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    age INT NOT NULL,
+    registered_course VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
